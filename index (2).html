@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deuce Stringing Co. | Racket Stringing & Regripping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#top" class="logo">DEUCE<span>Stringing Co.</span></a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Book a stringing</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Open till 9pm &mdash; strung under the lights</p>
+        <h1>DEAD STRINGS<br>DON'T PLAY<br>SETS.</h1>
+        <p class="hero-sub">Precision stringing for club players and juniors who'd rather not find out mid-match. Every job logged, so the next one matches exactly.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a stringing</a>
+          <a href="#pricing" class="btn btn-ghost">See pricing</a>
+        </div>
+      </div>
+      <div class="hero-readout" aria-hidden="true">
+        <span class="readout-label">Last job strung at</span>
+        <span class="readout-value">58<small>LBS</small></span>
+        <span class="readout-label">Turnaround</span>
+        <span class="readout-value readout-small">24<small>HRS</small></span>
+      </div>
+    </section>
+
+    <div class="net-line"></div>
+
+    <section class="services" id="services">
+      <div class="section-head">
+        <p class="eyebrow">What we do</p>
+        <h2>Three things. Done right.</h2>
+      </div>
+      <ol class="service-list">
+        <li>
+          <span class="service-index">01</span>
+          <div>
+            <h3>Racket stringing</h3>
+            <p>Full restrings on any tension, any pattern. We log your setup so every future job matches exactly &mdash; no re-explaining what you like.</p>
+          </div>
+        </li>
+        <li>
+          <span class="service-index">02</span>
+          <div>
+            <h3>Grip replacement</h3>
+            <p>Overgrips and replacement grips in a range of thicknesses and textures, fitted while you wait or added to a stringing job.</p>
+          </div>
+        </li>
+        <li>
+          <span class="service-index">03</span>
+          <div>
+            <h3>String selection</h3>
+            <p>Not sure what fits your game? We'll match string type and tension to your swing, your arm, and your budget.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <div class="net-line"></div>
+
+    <section class="pricing" id="pricing">
+      <div class="section-head">
+        <p class="eyebrow">Pricing</p>
+        <h2>String and tension, priced straight</h2>
+      </div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>String type</th>
+            <th>Tension range</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Synthetic gut</td>
+            <td>50&ndash;60 lbs</td>
+            <td>$25</td>
+          </tr>
+          <tr>
+            <td>Multifilament</td>
+            <td>50&ndash;62 lbs</td>
+            <td>$32</td>
+          </tr>
+          <tr>
+            <td>Polyester</td>
+            <td>45&ndash;58 lbs</td>
+            <td>$28</td>
+          </tr>
+          <tr>
+            <td>Natural gut</td>
+            <td>50&ndash;62 lbs</td>
+            <td>$48</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="pricing-note">Price includes labor. Bring your own string and take $8 off any job.</p>
+    </section>
+
+    <div class="net-line"></div>
+
+    <section class="gallery" id="gallery">
+      <div class="section-head">
+        <p class="eyebrow">Recent work</p>
+        <h2>Fresh off the machine</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-large">
+          <img src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=800&q=80" alt="Close-up of freshly strung tennis racket">
+          <figcaption>Polyester, 52 lbs</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=500&q=80" alt="Tennis racket resting on a court">
+          <figcaption>Multifilament, 58 lbs</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="net-line"></div>
+
+    <section class="contact" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Ready when your racket is</h2>
+        <p>Send us a message and we'll confirm a drop-off window. Most jobs are ready in 24 hours.</p>
+        <ul class="contact-details">
+          <li>123 Baseline Ave, your city</li>
+          <li>Mon&ndash;Sat, 9am&ndash;9pm</li>
+          <li><a href="mailto:hello@deucestringing.co">hello@deucestringing.co</a></li>
+        </ul>
+      </div>
+      <form class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="name@email.com">
+        <label for="message">What do you need strung?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Racket, string preference, tension if you know it"></textarea>
+        <button type="submit" class="btn btn-primary">Send request</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="#top" class="logo">DEUCE<span>Stringing Co.</span></a>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-note">&copy; 2026 Deuce Stringing Co.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
