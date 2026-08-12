@@ -1,0 +1,332 @@
+:root {
+  --clay: #B5502A;
+  --clay-dark: #8A3A1E;
+  --chalk: #F7F2E7;
+  --pine: #1F3A2E;
+  --pine-dark: #142720;
+  --lime: #D7DE6E;
+  --ink: #241B15;
+  --ink-soft: #6B5C4E;
+  --border: #E4D9C6;
+
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--chalk);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.6rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--pine); color: var(--chalk); }
+.btn-primary:hover { background: var(--pine-dark); }
+.btn-ghost { border-color: var(--pine); color: var(--pine); }
+.btn-ghost:hover { background: var(--pine); color: var(--chalk); }
+
+/* Header / Nav — Flexbox required */
+.site-header {
+  background: var(--chalk);
+  border-bottom: 2px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--pine);
+  white-space: nowrap;
+}
+.logo span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a { font-weight: 500; font-size: 0.95rem; }
+.nav-links a:hover { color: var(--clay); }
+
+/* Hero — Flexbox split, clay band */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: var(--clay);
+  color: var(--chalk);
+}
+.hero-copy, .hero-visual { flex: 1 1 400px; }
+.hero-copy { padding: 5rem 2rem 5rem 2rem; max-width: 560px; margin-left: auto; }
+.hero-visual { display: flex; justify-content: center; padding: 3rem 2rem; }
+
+.hero .eyebrow { color: var(--lime); }
+.hero h1 { font-size: 4.25rem; margin: 0.3rem 0 1.25rem; }
+.hero-sub { color: #F0E3D6; max-width: 46ch; margin-bottom: 2rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero .btn-ghost { border-color: var(--chalk); color: var(--chalk); }
+.hero .btn-ghost:hover { background: var(--chalk); color: var(--clay); }
+.hero .btn-primary { background: var(--pine); }
+
+/* Signature element: CSS-drawn racket with woven strings */
+.racket { display: flex; flex-direction: column; align-items: center; width: 260px; }
+.racket-head {
+  width: 220px;
+  height: 280px;
+  border-radius: 50% / 42%;
+  border: 14px solid var(--pine);
+  background: var(--clay-dark);
+  overflow: hidden;
+  position: relative;
+}
+.racket-strings {
+  position: absolute;
+  inset: 6px;
+  background-image:
+    repeating-linear-gradient(0deg, var(--chalk) 0 2px, transparent 2px 18px),
+    repeating-linear-gradient(90deg, var(--chalk) 0 2px, transparent 2px 18px);
+  opacity: 0.85;
+}
+.racket-throat {
+  width: 40px;
+  height: 40px;
+  background: var(--pine);
+  clip-path: polygon(20% 0, 80% 0, 65% 100%, 35% 100%);
+  margin-top: -4px;
+}
+.racket-handle {
+  width: 34px;
+  height: 120px;
+  background: var(--pine);
+  border-radius: 4px;
+}
+
+/* Court line divider — signature motif */
+.court-line {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+.court-line span {
+  flex: 1;
+  height: 3px;
+  background: var(--ink);
+  position: relative;
+}
+.court-line span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 15px;
+  background: var(--ink);
+}
+
+/* Section shared layout */
+section { max-width: 1100px; margin: 0 auto; padding: 4.5rem 2rem; }
+.section-head { margin-bottom: 2.5rem; max-width: 50ch; }
+.section-head h2 { font-size: 2.25rem; color: var(--pine); }
+
+/* Services — Flexbox cards */
+.service-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.service-card {
+  flex: 1 1 260px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--clay);
+  padding: 1.75rem;
+}
+.service-number {
+  font-family: var(--font-mono);
+  color: var(--clay);
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.service-card h3 { font-size: 1.4rem; color: var(--ink); margin-bottom: 0.6rem; }
+.service-card p { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Pricing table — scoreboard feel */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.pricing-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--chalk);
+  background: var(--pine);
+  padding: 0.85rem 1rem;
+}
+.pricing-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.pricing-table tbody tr:nth-child(odd) { background: #FBF7EF; }
+.pricing-table td:last-child { font-family: var(--font-mono); color: var(--clay); font-weight: 500; }
+.pricing-note { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* Gallery — Flexbox strip, duotone treatment */
+.gallery-grid {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.gallery-grid figure {
+  flex: 1 1 260px;
+  position: relative;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1);
+}
+.gallery-grid figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clay);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+.gallery-grid figcaption {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--chalk);
+  z-index: 2;
+}
+
+/* Contact — Flexbox split */
+.contact {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.contact-copy { flex: 1 1 320px; }
+.contact-copy h2 { font-size: 2.25rem; color: var(--pine); margin-bottom: 0.75rem; }
+.contact-copy p { color: var(--ink-soft); margin-bottom: 1.25rem; }
+.contact-details { list-style: none; color: var(--ink-soft); font-size: 0.95rem; }
+.contact-details li { margin-bottom: 0.4rem; }
+.contact-details a { color: var(--clay); font-weight: 500; }
+
+.contact-form {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--pine);
+  padding: 1.75rem;
+}
+.contact-form label { font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); }
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.contact-form button { margin-top: 1rem; align-self: flex-start; }
+
+/* Footer — Flexbox */
+.site-footer { background: var(--pine-dark); color: var(--chalk); }
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.site-footer .logo { color: var(--chalk); }
+.site-footer .logo span { color: var(--lime); }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; }
+.footer-links a { font-size: 0.9rem; }
+.footer-links a:hover { color: var(--lime); }
+.footer-note { font-family: var(--font-mono); font-size: 0.8rem; color: #9FAFA6; }
+
+/* Responsive */
+@media (max-width: 720px) {
+  .navbar { flex-wrap: wrap; }
+  .nav-links { order: 3; width: 100%; justify-content: center; }
+  .hero { flex-direction: column; }
+  .hero-copy { margin: 0; padding: 3rem 1.5rem 1rem; }
+  .hero h1 { font-size: 3rem; }
+  .racket-head { width: 180px; height: 230px; }
+}
